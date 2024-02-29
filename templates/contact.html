@@ -1,0 +1,87 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <!-- pageBdWrapNav -->
+    <nav class="pageBdWrapNav bg-light"  aria-label="breadcrumb">
+        <div class="container">
+            <div class="row align-items-md-center">
+                <div class="col-12 col-md-7">
+                    <!-- breadcrumb -->
+                    <ol class="breadcrumb pageBreadcrumb m-0 p-0 text-capitalize">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'index' %}">
+                                <i class="fas fa-home icn"><span class="sr-only">icon</span></i>
+                                ГЛАВНАЯ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">КОНТАКТЫ</li>
+                    </ol>
+                </div>
+                <div class="col-12 col-md-5 d-none d-md-flex align-items-md-center justify-content-md-end">
+                    <!-- title -->
+                    <strong class="title d-block text-right fontRoboto fwMedium text-capitalize text-dark">КОНТАКТЫ</strong>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- contactAreaBlock -->
+    <section class="contactAreaBlock contentBlock">
+        <div class="container">
+            <div class="row mb-5 align-items-center">
+                <div class="col-12 col-md-5">
+                    <h2 class="text-uppercase">Get it touch</h2>
+                    <p><span class="fontRoboto">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
+                    <!-- ctAddress -->
+                    <address class="ctAddress text-dark">
+                        <ul class="list-unstyled">
+                            <li class="d-flex align-items-center">
+                                <i class="ei_icon_pin_alt icn text-center flex-shrink-0"><span class="sr-only">icon</span></i>
+                                <strong class="text font-weight-normal">40 Baria Sreet 133/2 NewYork, US</strong>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="ei_icon_mail_alt text-center icn flex-shrink-0"><span class="sr-only">icon</span></i>
+                                <strong class="text font-weight-normal"><a href="mailto:&#105;&#110;&#102;&#111;&#046;&#100;&#101;&#101;&#114;&#099;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">info.deercreative@gmail.com</a></strong>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="ei_icon_mobile icn text-center flex-shrink-0"><span class="sr-only">icon</span></i>
+                                <strong class="text font-weight-normal"><a href="tel:+&#049;&#050;&#051;&#052;&#053;&#054;&#055;&#056;&#057;&#049;&#049;&#050;&#048;">(+123) 456-789-1120</a></strong>
+                            </li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="col-12 col-md-6 offset-xl-1 col-xl-6">
+                    <!-- widgetCtForm -->
+                    <aside class="widget widgetCtForm hasShadow bg-white mb-4">
+                        <form action="javascript:void(0);">
+                            <!-- form group -->
+                            <div class="form-group">
+                                <input type="text" class="form-control w-100 d-block" placeholder="Name *">
+                            </div>
+                            <!-- form group -->
+                            <div class="form-group">
+                                <input type="tel" class="form-control w-100 d-block" placeholder="Phone">
+                            </div>
+                            <!-- form group -->
+                            <div class="form-group">
+                                <textarea class="form-control d-block w-100" placeholder="Message*"></textarea>
+                            </div>
+                            <!-- button -->
+                            <button class="btn btnTheme d-block w-100 text-uppercase" type="submit" data-hover="Get A Quote">
+                                <span class="d-block btnText">Get A Quote</span>
+                            </button>
+                        </form>
+                    </aside>
+                </div>
+            </div>
+            <!-- ctMapHolder -->
+            <div class="ctMapHolder position-relative ">
+                <!-- map -->
+                <span class="bgCover map d-block" style="background-image: url(images/mapPlaceholder01.jpg);"><span class="sr-only">map placeholder</span></span>
+            </div>
+        </div>
+    </section>
+</main>
+    
+{% endblock %}

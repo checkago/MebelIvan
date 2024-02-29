@@ -1,0 +1,61 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+    <!-- pageBdWrapNav -->
+    <nav class="pageBdWrapNav bg-light"  aria-label="breadcrumb">
+        <div class="container">
+            <div class="row align-items-md-center">
+                <div class="col-12 col-md-7">
+                    <!-- breadcrumb -->
+                    <ol class="breadcrumb pageBreadcrumb m-0 p-0 text-capitalize">
+                        <li class="breadcrumb-item">
+                            <a href="{% url 'index' %}">
+                                <i class="fas fa-home icn"><span class="sr-only">icon</span></i>
+                                ГЛАВНАЯ
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">ПРОЕКТЫ</li>
+                    </ol>
+                </div>
+                <div class="col-12 col-md-5 d-none d-md-flex align-items-md-center justify-content-md-end">
+                    <!-- title -->
+                    <strong class="title d-block text-right fontRoboto fwMedium text-capitalize text-dark">ПРОЕКТЫ</strong>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- contentBlock -->
+    <section class="contentBlock pb-1">
+        <div class="container">
+            <!-- prjctDescrColumn -->
+            {% for project in projects %}
+            <article class="prjctDescrColumn hasMbBottom hasOver">
+                <div class="row align-items-md-center">
+                    <div class="col-12 col-md-6 colImage">
+                        <!-- prjctColumnImageWrap -->
+                        <div class="prjctColumnImageWrap alignleft rounded">
+                            <img class="d-block w-100 rounded" src="{% static 'assets/images/placeholder.webp' %}" alt="image description">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 colDescr">
+                        <!-- prjctTextHolder -->
+                        <div class="bg-white hasShadow rounded prjctTextHolder position-relative">
+                            <!-- postTitleTextTag -->
+                            <strong class="d-block postTitleTextTag font-weight-normal text-capitalize">Vintage / Morden</strong>
+                            <h3 class="text-capitalize">Name Project: <a href="project-details.html">Black And White Kitchens</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="project-details.html" class="btnMore d-inline-block">Details <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+            <!-- prjctDescrColumn -->
+        </div>
+    </section>
+</main>
+
+{% endblock %}
