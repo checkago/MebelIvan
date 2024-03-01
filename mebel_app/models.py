@@ -102,8 +102,8 @@ class GalleryCategory(models.Model):
     name = models.CharField(max_length=50, verbose_name='Наимевание')
 
     class Meta:
-        verbose_name = 'Категория услуг'
-        verbose_name_plural = 'Категории услуг'
+        verbose_name = 'Категория изображения услуг'
+        verbose_name_plural = 'Категории изображений услуг'
 
     def __str__(self):
         return self.name
@@ -119,6 +119,8 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.category
+
+
 
 
 
