@@ -28,6 +28,7 @@
     </nav>
     <!-- contactAreaBlock -->
     <!-- abtIntroAsideBlock -->
+    {% for About in about %}
     <aside class="abtIntroAsideBlock contentBlock">
         <div class="container">
             <div class="row">
@@ -37,44 +38,43 @@
                         <!-- blockH -->
                         <h2 class="text-uppercase blockH font-weight-bold mb-0">
                             <!-- hTitle -->
-                            <strong class="font-weight-normal hTitle d-block fontBase">About</strong>
-                            <span class="d-block">we have over 20 years experience</span>
+                            <strong class="font-weight-normal hTitle d-block fontBase">О нас</strong>
+                            <span class="d-block">{{ About.title }}</span>
                         </h2>
                     </header>
                 </div>
                 <div class="col-12 col-md-8">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>{{ About.description }}</p>
                 </div>
             </div>
             <!-- featuresList -->
             <ul class="list-unstyled d-flex flex-wrap justify-content-between featuresList featuresList04 text-left">
                 <li class="hasOver">
-                    <i class="icn icmon_01 inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
+                    <i class="{{ About.first_counter_icon }} inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
                     <div class="extraWrap">
-                        <h3 class="fwSemiBold fontBase counter">2145</h3>
-                        <h4 class="font-weight-normal fontBase">Satisfied Clients</h4>
+                        <h3 class="fwSemiBold fontBase counter">{{ About.first_counter }}</h3>
+                        <h4 class="font-weight-normal fontBase">{{ About.first_counter_name }}</h4>
                     </div>
                 </li>
                 <li class="hasOver">
-                    <i class="icn icmon_02 inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
+                    <i class="{{ About.second_counter_icon }} inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
                     <div class="extraWrap">
-                        <h3 class="fwSemiBold fontBase counter">190</h3>
-                        <h4 class="font-weight-normal fontBase">Employees</h4>
+                        <h3 class="fwSemiBold fontBase counter">{{ About.second_counter }}</h3>
+                        <h4 class="font-weight-normal fontBase">{{ About.second_counter_name }}</h4>
                     </div>
                 </li>
                 <li class="hasOver">
-                    <i class="icn icmon_03 inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
+                    <i class="{{ About.third_counter_icon }} inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
                     <div class="extraWrap">
-                        <h3 class="fwSemiBold fontBase counter">1280</h3>
-                        <h4 class="font-weight-normal fontBase">Hours Working</h4>
+                        <h3 class="fwSemiBold fontBase counter">{{ About.third_counter }}</h3>
+                        <h4 class="font-weight-normal fontBase">{{ About.third_counter_name }}</h4>
                     </div>
                 </li>
                 <li class="hasOver">
-                    <i class="icn icmon_04 inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
+                    <i class="{{ About.fourth_counter_icon }} inaccessible flex-shrink-0"><span class="sr-only">icon</span></i>
                     <div class="extraWrap">
-                        <h3 class="fwSemiBold fontBase counter">260</h3>
-                        <h4 class="font-weight-normal fontBase">Win Award</h4>
+                        <h3 class="fwSemiBold fontBase counter">{{ About.fourth_counter }}</h3>
+                        <h4 class="font-weight-normal fontBase">{{ About.fourth_counter_name }}</h4>
                     </div>
                 </li>
             </ul>
@@ -95,63 +95,63 @@
                             <!-- blockH -->
                             <h2 class="text-uppercase blockH font-weight-bold">
                                 <!-- hTitle -->
-                                <strong class="font-weight-normal hTitle d-block fontBase">Benefit</strong>
-                                <span class="d-block">Why Choose Us</span>
+                                <strong class="font-weight-normal hTitle d-block fontBase">Преимущества</strong>
+                                <span class="d-block">{{ About.why_title }}</span>
                             </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua.</p>
+                            <p>{{ About.why_description }}</p>
                         </header>
                         <!-- yoeListing -->
                         <ul class="list-unstyled yoeListing pl-xl-5">
                             <li class="hasOver">
                                 <!-- titleWrap -->
                                 <div class="titleWrap d-flex align-items-center">
-                                    <i class="ti-ruler-pencil d-block icn flex-shrink-0"><span class="sr-only">icon</span></i>
-                                    <h3>Year Of Experience</h3>
+                                    <i class="{{ About.reason_one_icon }} d-block icn flex-shrink-0"><span class="sr-only">icon</span></i>
+                                    <h3>{{ About.reason_one_title }}</h3>
                                 </div>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                <p>{{ About.reason_one_description }}</p>
                             </li>
                             <li class="hasOver">
                                 <!-- titleWrap -->
                                 <div class="titleWrap d-flex align-items-center">
-                                    <i class="ti-alarm-clock d-block icn flex-shrink-0"><span class="sr-only">icon</span></i>
-                                    <h3>Optimized For Leads</h3>
+                                    <i class="{{ About.reason_two_icon }} d-block icn flex-shrink-0"><span class="sr-only">icon</span></i>
+                                    <h3>{{ About.reason_two_title }}</h3>
                                 </div>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+                                <p>{{ About.reason_two_description }}</p>
                             </li>
                             <li class="hasOver">
                                 <!-- titleWrap -->
                                 <div class="titleWrap d-flex align-items-center">
-                                    <i class="ti-reload d-block icn flex-shrink-0"><span class="sr-only">icon</span></i>
-                                    <h3>Easy to Update</h3>
+                                    <i class="{{ About.reason_three_icon }} d-block icn flex-shrink-0"><span class="sr-only">icon</span></i>
+                                    <h3>{{ About.reason_three_title }}</h3>
                                 </div>
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit pernatur aut odit aut fugit.</p>
+                                <p>{{ About.reason_three_description }}</p>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-12 d-none d-md-block col-md-5 order-md-1">
                     <!-- wcuBlockImageHolder -->
-                    <div class="wcuBlockImageHolder bgCover d-flex w-100 h-100 rounded" style="background-image: url(http://placehold.it/470x540);">
-                        <img class="rounded" src="http://placehold.it/470x540" alt="image description">
+                    <div class="wcuBlockImageHolder bgCover d-flex w-100 h-100 rounded" style="background-image: url({{ About.palax_image.url }});">
+                        <img class="rounded" src="{{ About.why_image.url }}" alt="Furniture">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- mkCallAside -->
-    <aside class="mkCallAside animFour position-relative bgCover text-center text-md-left text-white" data-parallax="scroll" data-image-src="http://placehold.it/1920x200">
+    <aside class="mkCallAside animFour position-relative bgCover text-center text-md-left text-white" data-parallax="scroll" data-image-src="{{ About.palax_image.url }}">
         <div class="container mkCallAsideHolder position-relative">
             <div class="align">
                 <div class="row align-items-md-center">
                     <div class="col-12 col-md-8">
-                        <h2 class="text-uppercase font-weight-bold">Making Beautiful Our Kitchen</h2>
-                        <p>Quality is what we pursue, We know what we do</p>
+                        <h2 class="text-uppercase font-weight-bold">{{ About.add_title }}</h2>
+                        <p>{{ About.add_description }}</p>
                     </div>
                     <div class="col-12 col-md-4 text-md-right">
-                        <a href="tel:+&#049;&#050;&#051;&#052;&#053;&#054;&#055;&#056;&#057;" class="btn btnTheme btnThemeWhiteInverse fontRoboto btnRoudedLarge" data-hover="+123.456.789">
+                        <a href="tel:{{ About.add_phone }}" class="btn btnTheme btnThemeWhiteInverse fontRoboto btnRoudedLarge" data-hover="{{ About.add_phone }}">
                             <span class="btnText d-block">
                                 <i class="ei_icon_phone btnIcn"><span class="sr-only">icon</span></i>
-                                <span>+123.456.789</span>
+                                <span>{{ About.add_phone }}</span>
                             </span>
                         </a>
                     </div>
@@ -169,66 +169,28 @@
                         <!-- blockH -->
                         <h2 class="text-uppercase blockH font-weight-bold">
                             <!-- hTitle -->
-                            <strong class="font-weight-normal hTitle d-block fontBase">Services</strong>
-                            <span class="d-block">What We Do</span>
+                            <strong class="font-weight-normal hTitle d-block fontBase">Услуги</strong>
+                            <span class="d-block">Что мы делаем?</span>
                         </h2>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+                        <p>Наши услуги, только высокого качества и экономичны</p>
                     </header>
                 </div>
             </div>
             <div class="row d-block">
                 <!-- swwdColumnsSlider -->
                 <div class="swwdColumnsSlider slickSlider">
+                    {% for Project in projects %}
                     <div class="col-12">
                         <!-- swwdPost -->
                         <article class="swwdPost hasOver">
                             <div class="aligncenter">
-                                <img class="d-block w-100" src="http://placehold.it/370x240" alt="image description">
+                                <img class="d-block w-100" src="{{ Project.image.url }}" alt="{{ Project.name }}">
                             </div>
-                            <h3 class="text-capitalize"><a href="services3.html">Design &amp; Drawings</a></h3>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+                            <h3 class="text-capitalize"><a href="services3.html">{{ Project.name }}</a></h3>
+                            <p>{{ Project.description }}</p>
                         </article>
                     </div>
-                    <div class="col-12">
-                        <!-- swwdPost -->
-                        <article class="swwdPost hasOver">
-                            <div class="aligncenter">
-                                <img class="d-block w-100" src="http://placehold.it/370x240" alt="image description">
-                            </div>
-                            <h3 class="text-capitalize"><a href="services3.html">Rebuild Design</a></h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitat ullamco laboris nisi ut</p>
-                        </article>
-                    </div>
-                    <div class="col-12">
-                        <!-- swwdPost -->
-                        <article class="swwdPost hasOver">
-                            <div class="aligncenter">
-                                <img class="d-block w-100" src="http://placehold.it/370x240" alt="image description">
-                            </div>
-                            <h3 class="text-capitalize"><a href="services3.html">Custom Design</a></h3>
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-                        </article>
-                    </div>
-                    <div class="col-12">
-                        <!-- swwdPost -->
-                        <article class="swwdPost hasOver">
-                            <div class="aligncenter">
-                                <img class="d-block w-100" src="http://placehold.it/370x240" alt="image description">
-                            </div>
-                            <h3 class="text-capitalize"><a href="services3.html">Rebuild Design</a></h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitat ullamco laboris nisi ut</p>
-                        </article>
-                    </div>
-                    <div class="col-12">
-                        <!-- swwdPost -->
-                        <article class="swwdPost hasOver">
-                            <div class="aligncenter">
-                                <img class="d-block w-100" src="http://placehold.it/370x240" alt="image description">
-                            </div>
-                            <h3 class="text-capitalize"><a href="services3.html">Rebuild Design</a></h3>
-                            <p>Ut enim ad minim veniam, quis nostrud exercitat ullamco laboris nisi ut</p>
-                        </article>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -260,165 +222,34 @@
                         <!-- blockH -->
                         <h2 class="text-uppercase blockH font-weight-bold">
                             <!-- hTitle -->
-                            <strong class="font-weight-normal hTitle d-block fontBase">Our Team</strong>
-                            <span class="d-block">work with us</span>
+                            <strong class="font-weight-normal hTitle d-block fontBase">Наша команда</strong>
+                            <span class="d-block">работайте с нами</span>
                         </h2>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</p>
+                        <p>Опыт, профессионализм</p>
                     </header>
                 </div>
             </div>
             <div class="row">
+                {% for Employee in employers %}
                 <div class="col-12 col-sm-6 col-lg-3 ">
                     <!-- teamColumn -->
                     <article class="teamColumn hasOver position-relative rounded">
                         <!-- imgHolder -->
                         <div class="aligncenter imgHolder">
-                            <img class="d-block w-100" src="http://placehold.it/270x255" alt="Brandon Kelley Interior Design">
+                            <img class="d-block w-100" src="{{ Employee.image.url }}" alt="">
                         </div>
                         <!-- captionWrap -->
                         <div class="captionWrap">
-                            <h3 class="text-capitalize"><a href="#">Brandon Kelley</a></h3>
-                            <h4 class="fontBase font-weight-normal text-capitalize">Interior Design</h4>
-                            <!-- tcSocialNetworks -->
-                            <ul class="list-unstyled socialNetworks d-flex justify-content-center tcSocialNetworks mb-0">
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-facebook-f icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-twitter icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-pinterest icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-instagram icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            <h3 class="text-capitalize"><a href="#">{{ Employee.name }}</a></h3>
+                            <h4 class="fontBase font-weight-normal text-capitalize">{{ Employee.position }}</h4>
                         </div>
                     </article>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <!-- teamColumn -->
-                    <article class="teamColumn hasOver position-relative rounded">
-                        <!-- imgHolder -->
-                        <div class="aligncenter imgHolder">
-                            <img class="d-block w-100" src="http://placehold.it/270x255" alt="Sonya French C.E.O Kitzen">
-                        </div>
-                        <!-- captionWrap -->
-                        <div class="captionWrap">
-                            <h3 class="text-capitalize"><a href="#">Sonya French</a></h3>
-                            <h4 class="fontBase font-weight-normal text-capitalize">C.E.O Kitzen</h4>
-                            <!-- tcSocialNetworks -->
-                            <ul class="list-unstyled socialNetworks d-flex justify-content-center tcSocialNetworks mb-0">
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-facebook-f icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-twitter icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-pinterest icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-instagram icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <!-- teamColumn -->
-                    <article class="teamColumn hasOver position-relative rounded">
-                        <!-- imgHolder -->
-                        <div class="aligncenter imgHolder">
-                            <img class="d-block w-100" src="http://placehold.it/270x255" alt="Jennifer Park Project Manager">
-                        </div>
-                        <!-- captionWrap -->
-                        <div class="captionWrap">
-                            <h3 class="text-capitalize"><a href="#">Jennifer Park</a></h3>
-                            <h4 class="fontBase font-weight-normal text-capitalize">Project Manager</h4>
-                            <!-- tcSocialNetworks -->
-                            <ul class="list-unstyled socialNetworks d-flex justify-content-center tcSocialNetworks mb-0">
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-facebook-f icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-twitter icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-pinterest icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-instagram icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <!-- teamColumn -->
-                    <article class="teamColumn hasOver position-relative rounded">
-                        <!-- imgHolder -->
-                        <div class="aligncenter imgHolder">
-                            <img class="d-block w-100" src="http://placehold.it/270x255" alt="Simon Larson Project Manager">
-                        </div>
-                        <!-- captionWrap -->
-                        <div class="captionWrap">
-                            <h3 class="text-capitalize"><a href="#">Simon Larson</a></h3>
-                            <h4 class="fontBase font-weight-normal text-capitalize">Interior Design</h4>
-                            <!-- tcSocialNetworks -->
-                            <ul class="list-unstyled socialNetworks d-flex justify-content-center tcSocialNetworks mb-0">
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-facebook-f icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-twitter icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-pinterest icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="d-flex align-items-center justify-content-center rounded-circle">
-                                        <i class="fab fa-instagram icn text-center"><span class="sr-only">icon</span></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
+    {% endfor %}
 </main>
     
 {% endblock %}

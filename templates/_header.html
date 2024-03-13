@@ -14,15 +14,15 @@
                     <!-- topBarContactList -->
                     <ul class="list-unstyled topBarContactList align-items-center mb-0 d-none d-md-flex">
                         <li>
-                            <a href="tel:+&#049;&#050;&#051;&#052;&#053;&#054;&#055;&#056;&#057;&#048;">
+                            <a href="tel:{{ contact_info.phone }}">
                                 <i class="ti-mobile icn"><span class="sr-only">icon</span></i>
-                                <span class="d-none d-lg-inline">(+123) 456 7890</span>
+                                <span class="d-none d-lg-inline">{{ contact_info.phone }}</span>
                             </a>
                         </li>
                         <li>
-                            <a href="mailto:&#073;&#110;&#102;&#111;&#046;&#100;&#101;&#101;&#114;&#099;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+                            <a href="mailto:{{ contact_info.email }}">
                                 <i class="ti-email icn"><span class="sr-only">icon</span></i>
-                                <span class="d-none d-lg-inline">Info.deercreative@gmail.com</span>
+                                <span class="d-none d-lg-inline">{{ contact_info.email }}</span>
                             </a>
                         </li>
                     </ul>
@@ -31,29 +31,16 @@
                     <!-- shareWTitleWrap -->
                     <div class="shareWTitleWrap d-flex align-items-center">
                         <!-- shareTitle -->
-                        <strong class="shareTitle text-capitalize font-weight-normal d-none d-md-block">Follow Us:</strong>
+                        <strong class="shareTitle text-capitalize font-weight-normal d-none d-md-block">Следи за нами:</strong>
                         <!-- socialLinksSimple -->
                         <ul class="list-unstyled socialNetworks socialLinksSimple d-flex align-items-center justify-content-end mb-0">
+                            {% for Social in socials %}
                             <li>
-                                <a href="javascript:void(0);">
-                                    <span class="fab fa-facebook-f"><span class="sr-only">facebook</span></span>
+                                <a href="{{ Social.link }}">
+                                    <span class="{{ Social.icon }}"><span class="sr-only">{{ Social.name }}</span></span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <span class="fab fa-twitter"><span class="sr-only">twitter</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <span class="fab fa-pinterest"><span class="sr-only">pinterest</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <span class="fab fa-google-plus-g"><span class="sr-only">google plus</span></span>
-                                </a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
@@ -101,8 +88,8 @@
                             </ul>
                         </div>
                     </nav>
-                    <a href="javascript:void(0);" class="btn btnThemeOutine btnThemeOutineNotWhite text-uppercase order-1 order-lg-2 flex-shrink-0 d-none d-sm-inline-block" data-hover="Get A Quote">
-                        <span class="d-block btnText">Get A Quote</span>
+                    <a href="javascript:void(0);" class="btn btnThemeOutine btnThemeOutineNotWhite text-uppercase order-1 order-lg-2 flex-shrink-0 d-none d-sm-inline-block" data-hover="ЗАКАЗАТЬ">
+                        <span class="d-block btnText">ЗАКАЗАТЬ</span>
                     </a>
                 </div>
             </div>

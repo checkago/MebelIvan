@@ -31,27 +31,31 @@
     <section class="contentBlock pb-1">
         <div class="container">
             <!-- prjctDescrColumn -->
-            {% for project in projects %}
-            <article class="prjctDescrColumn hasMbBottom hasOver">
-                <div class="row align-items-md-center">
-                    <div class="col-12 col-md-6 colImage">
-                        <!-- prjctColumnImageWrap -->
-                        <div class="prjctColumnImageWrap alignleft rounded">
-                            <img class="d-block w-100 rounded" src="{% static 'assets/images/placeholder.webp' %}" alt="image description">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 colDescr">
-                        <!-- prjctTextHolder -->
-                        <div class="bg-white hasShadow rounded prjctTextHolder position-relative">
-                            <!-- postTitleTextTag -->
-                            <strong class="d-block postTitleTextTag font-weight-normal text-capitalize">Vintage / Morden</strong>
-                            <h3 class="text-capitalize">Name Project: <a href="project-details.html">Black And White Kitchens</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <a href="project-details.html" class="btnMore d-inline-block">Details <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
-                        </div>
-                    </div>
+            {% for Project in projects %}
+              {% if forloop.counter|divisibleby:2 %}
+                <article class="prjctDescrColumn hasMbBottom hasOver"> 
+              {% else %}
+                <article class="prjctDescrColumn hasMbBottom prjctDescrColumnOrderInverse text-md-right hasOver">
+              {% endif %}
+              <div class="row align-items-md-center">
+                <div class="col-12 col-md-6 {% if forloop.counter|divisibleby:2 %}order-md-2 colImage{% else %}order-md-1 colImage{% endif %}">
+                  <!-- prjctColumnImageWrap -->
+                  <div class="prjctColumnImageWrap {% if forloop.counter|divisibleby:2 %}alignleft{% else %}alignright{% endif %} rounded">
+                    <img class="d-block w-100 rounded" src="{{ Project.image.url }}" alt="image description">
+                  </div>
                 </div>
-            </article>
+                <div class="col-12 col-md-6 {% if forloop.counter|divisibleby:2 %}order-md-1{% else %}order-md-2{% endif %} colDescr">
+                  <!-- prjctTextHolder -->
+                  <div class="bg-white hasShadow rounded prjctTextHolder position-relative">
+                    <!-- postTitleTextTag -->
+                    <strong class="d-block postTitleTextTag font-weight-normal text-capitalize">{{ Project.title }}</strong>
+                    <h3 class="text-capitalize"><a href="project-details.html">{{ Project.name }}</a></h3>
+                    <p>{{ Project.description }}</p>
+                    <a href="{% url 'project-detail' Project.pk %}" class="btnMore d-inline-block">Подробнее <i class="icn ei_arrow_right"><span class="sr-only">icon</span></i></a>
+                  </div>
+                </div>
+              </div>
+              </article>
             {% endfor %}
             <!-- prjctDescrColumn -->
         </div>

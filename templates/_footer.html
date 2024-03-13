@@ -47,12 +47,12 @@
 										</ul>
 									</div>
 									<div class="col-12 col-sm-6">
-										<h3 class="text-white">Quick Link</h3>
+										<h3 class="text-white">Меню</h3>
 										<ul class="list-unstyled">
-											<li><a href="javascript:void(0);">Latest News</a></li>
-											<li><a href="javascript:void(0);">Products</a></li>
-											<li><a href="javascript:void(0);">Best Design</a></li>
-											<li><a href="javascript:void(0);">Customs Services</a></li>
+											<li><a href="j{% url 'index' %}">Главная</a></li>
+											<li><a href="{% url 'project' %}">Услуги</a></li>
+											<li><a href="{% url 'about-us' %}">О нас</a></li>
+											<li><a href="{% url 'contact' %}">Контакты</a></li>
 										</ul>
 									</div>
 								</div>
@@ -92,7 +92,7 @@
 							<!-- logo -->
 							<div class="logo">
 								<a href="home.html">
-									<img src="images/logo.png" alt="kitzen">
+									<img src="{% static 'assets/images/logo.png' %}" alt="kitzen">
 								</a>
 							</div>
 							<!-- ftAddress -->
@@ -101,21 +101,21 @@
 								<ul class="list-unstyled adrList mb-0">
 									<li>
 										<i class="fas fa-map-marker-alt flex-shrink-0 icn"><span class="sr-only">icon</span></i>
-										<strong class="font-weight-normal text d-block">198 Collins St, Melbourne, NY</strong>
+										<strong class="font-weight-normal text d-block">{{ contact_info.address }}</strong>
 									</li>
 									<li>
 										<i class="fas fa-phone fa-flip-horizontal flex-shrink-0 icn"><span class="sr-only">icon</span></i>
-										<strong class="font-weight-normal text d-block"><a href="tel:&#049;&#050;&#051;&#052;&#053;&#054;&#055;&#056;&#057;&#049;&#048;">(12) 345 678 910</a></strong>
+										<strong class="font-weight-normal text d-block"><a href="tel:{{ contact_info.phone }}">{{ contact_info.phone }}</a></strong>
 									</li>
 									<li>
 										<i class="fas fa-envelope flex-shrink-0 icn"><span class="sr-only">icon</span></i>
-										<strong class="font-weight-normal text d-block"><a href="mailto:&#068;&#101;&#101;&#114;&#067;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#068;&#101;&#101;&#114;&#067;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a></strong>
+										<strong class="font-weight-normal text d-block"><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></strong>
 									</li>
 								</ul>
 							</address>
 							<!-- copyrightWrap -->
 							<div class="copyrightWrap">
-								<p>Copyright &copy; 2019 <a href="{% url 'index' %}">Kitzen Inc</a>.</p>
+								<p>&copy; 2022 <a href="{% url 'index' %}">Revenant-IT</a>.</p>
 							</div>
 						</div>
 					</div>

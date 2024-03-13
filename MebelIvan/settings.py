@@ -64,6 +64,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mebel_app.context_processors.contact_info',
+                'mebel_app.context_processors.social_info',
             ],
         },
     },

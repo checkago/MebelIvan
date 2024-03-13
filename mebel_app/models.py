@@ -61,9 +61,42 @@ class About(models.Model):
     reason_three_description = models.TextField(verbose_name='Описание причины 3')
     reason_three_icon = models.CharField(max_length=50, verbose_name='Иконка причины 3')
 
+    """Блок призыва к действию"""
+    palax_image = models.ImageField(upload_to='media/palax', blank=True, verbose_name='Изображение паралакс')
+    add_title = models.CharField(max_length=100, verbose_name='Заголовок призыва к действию')
+    add_description = models.CharField(max_length=150, verbose_name='Описание призыва к действию')
+    add_phone = models.CharField(max_length=19, verbose_name='Телефон призыва к действию')
+    add_active = models.BooleanField(default=True, verbose_name='Блок включен')
+
+
+
     class Meta:
         verbose_name = 'Вариант О нас'
         verbose_name_plural = 'Варианты блока О Нас'
+
+    def __str__(self):
+        return self.name
+
+
+class Position(models.Model):
+    name = models.CharField(max_length=150, verbose_name='Название')
+
+    class Meta:
+        verbose_name = 'Должность'
+        verbose_name_plural = 'Должности'
+
+    def __str__(self):
+        return self.name
+
+
+class Employee(models.Model):
+    name = models.CharField(max_length=150, verbose_name='Имя Фамилия')
+    position = models.ForeignKey(Position, verbose_name='Должность', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='media/employee', blank=True, verbose_name='Фото')
+
+    class Meta:
+        verbose_name = 'Сотрудник'
+        verbose_name_plural = 'Сотрудники'
 
     def __str__(self):
         return self.name
@@ -75,6 +108,7 @@ class Contact(models.Model):
     email = models.EmailField(verbose_name='Почта')
     phone = models.CharField(max_length=18, verbose_name='Телефон')
     map_link = models.CharField(max_length=1000, verbose_name='Ссылка на карту')
+    active = models.BooleanField(default=False, verbose_name='Основной')
 
     class Meta:
         verbose_name = 'Контакт'
@@ -87,6 +121,7 @@ class Contact(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name='Наименование')
     image = models.ImageField(upload_to='media/projects', verbose_name='Изображение')
+    short_description = models.CharField(max_length=250, verbose_name='Краткое описание')
     description = models.TextField(verbose_name='Описание')
     price = models.CharField(max_length=50, verbose_name='Стоимость')
 
@@ -118,7 +153,20 @@ class Gallery(models.Model):
         verbose_name_plural = 'Изображения услуг'
 
     def __str__(self):
-        return self.category
+        return self.category.name
+
+
+class Social(models.Model):
+    name = models.CharField(max_length=25, verbose_name='Название')
+    link = models.URLField(verbose_name='Ссылка')
+    icon = models.CharField(max_length=50, verbose_name='Тег иконки')
+
+    class Meta:
+        verbose_name = 'Соц. сеть'
+        verbose_name_plural = 'Соц. сети'
+
+    def __str__(self):
+        return self.name
 
 
 

@@ -31,25 +31,27 @@
         <div class="container">
             <div class="row mb-5 align-items-center">
                 <div class="col-12 col-md-5">
-                    <h2 class="text-uppercase">Get it touch</h2>
-                    <p><span class="fontRoboto">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></p>
+                    <h2 class="text-uppercase">Мы всегда на связи</h2>
+                    <p><span class="fontRoboto">Если у вас возникли дополнительные вопросы, мы будем рады на них ответить!</span></p>
                     <!-- ctAddress -->
+                     {% for Contact in contact %}
                     <address class="ctAddress text-dark">
                         <ul class="list-unstyled">
                             <li class="d-flex align-items-center">
                                 <i class="ei_icon_pin_alt icn text-center flex-shrink-0"><span class="sr-only">icon</span></i>
-                                <strong class="text font-weight-normal">40 Baria Sreet 133/2 NewYork, US</strong>
+                                <strong class="text font-weight-normal">{{ Contact.address }}</strong>
                             </li>
                             <li class="d-flex align-items-center">
                                 <i class="ei_icon_mail_alt text-center icn flex-shrink-0"><span class="sr-only">icon</span></i>
-                                <strong class="text font-weight-normal"><a href="mailto:&#105;&#110;&#102;&#111;&#046;&#100;&#101;&#101;&#114;&#099;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">info.deercreative@gmail.com</a></strong>
+                                <strong class="text font-weight-normal"><a href="mailto:{{ Contact.email }}">{{ Contact.email }}</a></strong>
                             </li>
                             <li class="d-flex align-items-center">
                                 <i class="ei_icon_mobile icn text-center flex-shrink-0"><span class="sr-only">icon</span></i>
-                                <strong class="text font-weight-normal"><a href="tel:+&#049;&#050;&#051;&#052;&#053;&#054;&#055;&#056;&#057;&#049;&#049;&#050;&#048;">(+123) 456-789-1120</a></strong>
+                                <strong class="text font-weight-normal"><a href="tel:{{ Contact.phone }}">{{ Contact.phone }}</a></strong>
                             </li>
                         </ul>
                     </address>
+                    {% endfor %}
                 </div>
                 <div class="col-12 col-md-6 offset-xl-1 col-xl-6">
                     <!-- widgetCtForm -->
@@ -57,19 +59,19 @@
                         <form action="javascript:void(0);">
                             <!-- form group -->
                             <div class="form-group">
-                                <input type="text" class="form-control w-100 d-block" placeholder="Name *">
+                                <input type="text" class="form-control w-100 d-block" placeholder="Ваше имя *">
                             </div>
                             <!-- form group -->
                             <div class="form-group">
-                                <input type="tel" class="form-control w-100 d-block" placeholder="Phone">
+                                <input type="tel" class="form-control w-100 d-block" placeholder="Телефон">
                             </div>
                             <!-- form group -->
                             <div class="form-group">
-                                <textarea class="form-control d-block w-100" placeholder="Message*"></textarea>
+                                <textarea class="form-control d-block w-100" placeholder="Сообщение*"></textarea>
                             </div>
                             <!-- button -->
-                            <button class="btn btnTheme d-block w-100 text-uppercase" type="submit" data-hover="Get A Quote">
-                                <span class="d-block btnText">Get A Quote</span>
+                            <button class="btn btnTheme d-block w-100 text-uppercase" type="submit" data-hover="СПРОСИТЬ">
+                                <span class="d-block btnText">СПРОСИТЬ</span>
                             </button>
                         </form>
                     </aside>
