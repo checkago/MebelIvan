@@ -8,80 +8,33 @@
     <!-- bannerSliderBlock -->
     <section class="bannerSliderBlock bannerSlider w-100 slickSlider text-center text-white">
         <!-- bannerSliderSlide -->
+        {% for Banner in banners %}
         <div class="bannerSliderSlide">
             <!-- bannerSlideHolder -->
             <div class="container bannerSlideHolder position-relative">
                 <div class="align">
                     <!-- bannerSlideHeader -->
                     <header class="bannerSlideHeader">
-                        <h1 class="text-uppercase fwSemiBold fontBase">Build Up Your Beautiful Kitchen</h1>
-                        <p>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h1 class="text-uppercase fwSemiBold fontBase">{{ Banner.text }}</h1>
+                        <p>{{ Banner.additional_text|safe }}</p>
                     </header>
                     <!-- btnHolder -->
                     <footer class="btnHolder d-flex flex-wrap justify-content-center">
-                        <a href="javascript:void(0);" class="btn btnThemeOutine text-uppercase" data-hover="Learn More">
-                            <span class="d-block btnText">Learn More</span>
+                        <a href="javascript:void(0);" class="btn btnThemeOutine text-uppercase" data-hover="Подробнее">
+                            <span class="d-block btnText">Подробнее</span>
                         </a>
-                        <a href="contact2.html" class="btn btnTheme text-uppercase" data-hover="Contact Us">
-                            <span class="d-block btnText">Contact Us</span>
+                        <a href="contact2.html" class="btn btnTheme text-uppercase" data-hover="Связаться с нами">
+                            <span class="d-block btnText">Связаться с нами</span>
                         </a>
                     </footer>
                 </div>
             </div>
             <!-- bannerBlockSlideBg -->
             <span class="bgCover bannerBlockSlideBg d-block position-absolute" style="background-image: url(http://placehold.it/1920x870);">
-                <img class="sr-only" src="http://placehold.it/1920x870" alt="image description">
+                <img class="sr-only" src="{{ Banner.image.url }}" alt="image description">
             </span>
         </div>
-        <!-- bannerSliderSlide -->
-        <div class="bannerSliderSlide">
-            <!-- bannerSlideHolder -->
-            <div class="container bannerSlideHolder position-relative">
-                <div class="align">
-                    <!-- bannerSlideHeader -->
-                    <header class="bannerSlideHeader">
-                        <h1 class="text-uppercase fwSemiBold fontBase">Build Up Beautiful Kitchen</h1>
-                        <p>Lorem ipsum dolor sit amet sed do</p>
-                    </header>
-                    <!-- btnHolder -->
-                    <footer class="btnHolder d-flex flex-wrap justify-content-center">
-                        <a href="javascript:void(0);" class="btn btnThemeOutine text-uppercase" data-hover="Learn More">
-                            <span class="d-block btnText">Learn More</span>
-                        </a>
-                    </footer>
-                </div>
-            </div>
-            <!-- bannerBlockSlideBg -->
-            <span class="bgCover bannerBlockSlideBg d-block position-absolute" style="background-image: url(http://placehold.it/1920x870);">
-                <img class="sr-only" src="http://placehold.it/1920x870" alt="image description">
-            </span>
-        </div>
-        <!-- bannerSliderSlide -->
-        <div class="bannerSliderSlide">
-            <!-- bannerSlideHolder -->
-            <div class="container bannerSlideHolder position-relative">
-                <div class="align">
-                    <!-- bannerSlideHeader -->
-                    <header class="bannerSlideHeader">
-                        <h1 class="text-uppercase fwSemiBold fontBase">Build Up Your Beautiful Kitchen</h1>
-                        <p>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </header>
-                    <!-- btnHolder -->
-                    <footer class="btnHolder d-flex flex-wrap justify-content-center">
-                        <a href="javascript:void(0);" class="btn btnThemeOutine text-uppercase" data-hover="Learn More">
-                            <span class="d-block btnText">Learn More</span>
-                        </a>
-                        <a href="contact2.html" class="btn btnTheme text-uppercase" data-hover="Contact Us">
-                            <span class="d-block btnText">Contact Us</span>
-                        </a>
-                    </footer>
-                </div>
-            </div>
-            <!-- bannerBlockSlideBg -->
-            <span class="bgCover bannerBlockSlideBg d-block position-absolute" style="background-image: url(http://placehold.it/1920x870);">
-                <img class="sr-only" src="http://placehold.it/1920x870" alt="image description">
-            </span>
-        </div>
+        {% endfor %}
     </section>
     <!-- aboutIntroBlock -->
     <section class="aboutIntroBlock pb-0 text-center text-lg-left position-relative">
@@ -89,48 +42,49 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <div class="pr-xl-5">
+                        {% for About in abouts %}
                         <!-- headingHead -->
                         <header class="headingHead wow fadeInUp" data-wow-delay="0.1s">
                             <!-- blockH -->
                             <h2 class="text-uppercase blockH font-weight-bold">
                                 <!-- hTitle -->
-                                <strong class="font-weight-normal hTitle d-block fontBase">About</strong>
-                                <span class="d-block">Who We Are?</span>
+                                <strong class="font-weight-normal hTitle d-block fontBase">о нас</strong>
+                                <span class="d-block">{{ About.title }}</span>
                             </h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu  eu fugiat nulla pariatur.</p>
+                            <p>{{ About.description }}</p>
                         </header>
                         <!-- featuresList -->
                         <ul class="list-unstyled d-flex flex-wrap featuresList text-left wow fadeInUp" data-wow-delay="0.1s">
                             <li>
                                 <div class="wrap w-100 hasOver bgWhite hasShadow rounded position-relative">
-                                    <i class="icn icmon_01 inaccessible"><span class="sr-only">icon</span></i>
-                                    <h3 class="fwSemiBold fontBase counter">18</h3>
-                                    <h4 class="font-weight-normal fontBase">Year Experience</h4>
+                                    <i class="{{ About.first_counter_icon }} inaccessible"><span class="sr-only">icon</span></i>
+                                    <h3 class="fwSemiBold fontBase counter">{{ About.first_counter }}</h3>
+                                    <h4 class="font-weight-normal fontBase">{{ About.first_counter_name }}</h4>
                                 </div>
                             </li>
                             <li>
                                 <div class="wrap w-100 hasOver bgWhite hasShadow rounded position-relative">
-                                    <i class="icn icmon_02 inaccessible"><span class="sr-only">icon</span></i>
-                                    <h3 class="fwSemiBold fontBase counter">190</h3>
-                                    <h4 class="font-weight-normal fontBase">Project Done</h4>
+                                    <i class="{{ About.second_counter_icon }} inaccessible"><span class="sr-only">icon</span></i>
+                                    <h3 class="fwSemiBold fontBase counter">{{ About.second_counter }}</h3>
+                                    <h4 class="font-weight-normal fontBase">{{ About.second_counter_name }}</h4>
                                 </div>
                             </li>
                             <li>
                                 <div class="wrap w-100 hasOver bgWhite hasShadow rounded position-relative">
-                                    <i class="icn icmon_03 inaccessible"><span class="sr-only">icon</span></i>
-                                    <h3 class="fwSemiBold fontBase counter">80</h3>
-                                    <h4 class="font-weight-normal fontBase">Hours Working</h4>
+                                    <i class="{{ About.third_counter_icon }} inaccessible"><span class="sr-only">icon</span></i>
+                                    <h3 class="fwSemiBold fontBase counter">{{ About.third_counter }}</h3>
+                                    <h4 class="font-weight-normal fontBase">{{ About.third_counter_name }}</h4>
                                 </div>
                             </li>
                             <li>
                                 <div class="wrap w-100 hasOver bgWhite hasShadow rounded position-relative">
-                                    <i class="icn icmon_04 inaccessible"><span class="sr-only">icon</span></i>
-                                    <h3 class="fwSemiBold fontBase counter">260</h3>
-                                    <h4 class="font-weight-normal fontBase">Win Award</h4>
+                                    <i class="{{ About.fourth_counter_icon }} inaccessible"><span class="sr-only">icon</span></i>
+                                    <h3 class="fwSemiBold fontBase counter">{{ About.fourth_counter }}</h3>
+                                    <h4 class="font-weight-normal fontBase">{{ About.fourth_counter_name }}</h4>
                                 </div>
                             </li>
                         </ul>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 position-static">
@@ -192,8 +146,8 @@
                         <!-- blockH -->
                         <h2 class="text-uppercase blockH font-weight-bold">
                             <!-- hTitle -->
-                            <strong class="font-weight-normal hTitle d-block fontBase">Services</strong>
-                            <span class="d-block">What We Do</span>
+                            <strong class="font-weight-normal hTitle d-block fontBase">Услуги</strong>
+                            <span class="d-block">Что мы можем?</span>
                         </h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </header>
@@ -201,13 +155,14 @@
             </div>
             <!-- svColsRow -->
             <div class="row justify-content-center svColsRow no-gutters wow fadeInUp" data-wow-delay="0.1s">
+                {% for Service in services %}
                 <div class="col-12 col-md-4 d-md-flex col">
                     <!-- serviceColumn -->
                     <article class="serviceColumn d-md-flex align-items-md-center justify-content-md-center position-relative hasOver mb-0">
                         <div class="align">
-                            <i class="icn ti-ruler-pencil d-block"><span class="sr-only">icon</span></i>
-                            <h3>Design &amp; Drawings</h3>
-                            <p>Nam orci neque, tincidunt in vel vehicula vel lectus fusce libero neque</p>
+                            <i class="{{ Service.icon }} d-block"><span class="sr-only">icon</span></i>
+                            <h3>{{ Service.name }}</h3>
+                            <p>{{ Service.description }}</p>
                         </div>
                         <!-- columnBgCover -->
                         <span class="bgCover columnBgCover d-block position-absolute" style="background-image: url(http://placehold.it/395x260);">
@@ -215,76 +170,7 @@
                         </span>
                     </article>
                 </div>
-                <div class="col-12 col-md-4 d-md-flex col">
-                    <!-- serviceColumn -->
-                    <article class="serviceColumn d-md-flex align-items-md-center justify-content-md-center position-relative hasOver mb-0">
-                        <div class="align">
-                            <i class="icn ti-reload d-block"><span class="sr-only">icon</span></i>
-                            <h3>Rebuild Design</h3>
-                            <p>Nam orci neque, tincidunt in vel vehicula vel lectus fusce libero neque</p>
-                        </div>
-                        <!-- columnBgCover -->
-                        <span class="bgCover columnBgCover d-block position-absolute" style="background-image: url(http://placehold.it/395x260);">
-                            <img class="sr-only" src="http://placehold.it/395x260" alt="image description">
-                        </span>
-                    </article>
-                </div>
-                <div class="col-12 col-md-4 d-md-flex col">
-                    <!-- serviceColumn -->
-                    <article class="serviceColumn d-md-flex align-items-md-center justify-content-md-center position-relative hasOver mb-0">
-                        <div class="align">
-                            <i class="icn ti-paint-roller d-block"><span class="sr-only">icon</span></i>
-                            <h3>Custom Design</h3>
-                            <p>Nam orci neque, tincidunt in vel vehicula vel lectus fusce libero neque</p>
-                        </div>
-                        <!-- columnBgCover -->
-                        <span class="bgCover columnBgCover d-block position-absolute" style="background-image: url(http://placehold.it/395x260);">
-                            <img class="sr-only" src="http://placehold.it/395x260" alt="image description">
-                        </span>
-                    </article>
-                </div>
-                <div class="col-12 col-md-4 d-md-flex col">
-                    <!-- serviceColumn -->
-                    <article class="serviceColumn d-md-flex align-items-md-center justify-content-md-center position-relative hasOver mb-0">
-                        <div class="align">
-                            <i class="icn ti-paint-bucket d-block"><span class="sr-only">icon</span></i>
-                            <h3>Kitchen Design</h3>
-                            <p>Nam orci neque, tincidunt in vel vehicula vel lectus fusce libero neque</p>
-                        </div>
-                        <!-- columnBgCover -->
-                        <span class="bgCover columnBgCover d-block position-absolute" style="background-image: url(http://placehold.it/395x260);">
-                            <img class="sr-only" src="http://placehold.it/395x260" alt="image description">
-                        </span>
-                    </article>
-                </div>
-                <div class="col-12 col-md-4 d-md-flex col">
-                    <!-- serviceColumn -->
-                    <article class="serviceColumn d-md-flex align-items-md-center justify-content-md-center position-relative hasOver mb-0">
-                        <div class="align">
-                            <i class="icn ti-settings d-block"><span class="sr-only">icon</span></i>
-                            <h3>Installation</h3>
-                            <p>Nam orci neque, tincidunt in vel vehicula vel lectus fusce libero neque</p>
-                        </div>
-                        <!-- columnBgCover -->
-                        <span class="bgCover columnBgCover d-block position-absolute" style="background-image: url(http://placehold.it/395x260);">
-                            <img class="sr-only" src="http://placehold.it/395x260" alt="image description">
-                        </span>
-                    </article>
-                </div>
-                <div class="col-12 col-md-4 d-md-flex col">
-                    <!-- serviceColumn -->
-                    <article class="serviceColumn d-md-flex align-items-md-center justify-content-md-center position-relative hasOver mb-0">
-                        <div class="align">
-                            <i class="icn ti-package d-block"><span class="sr-only">icon</span></i>
-                            <h3>Fast Delivery</h3>
-                            <p>Nam orci neque, tincidunt in vel vehicula vel lectus fusce libero neque</p>
-                        </div>
-                        <!-- columnBgCover -->
-                        <span class="bgCover columnBgCover d-block position-absolute" style="background-image: url(http://placehold.it/395x260);">
-                            <img class="sr-only" src="http://placehold.it/395x260" alt="image description">
-                        </span>
-                    </article>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

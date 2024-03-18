@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
 
-from mebel_app.models import Banner, About, Contact, Project, GalleryCategory, Gallery, Position, Employee, Social
-
+from mebel_app.models import Banner, About, Contact, Project, GalleryCategory, Gallery, Position, Employee, Social, \
+    Service
 
 
 class EmployeeAdmin(admin.ModelAdmin):
@@ -15,6 +15,7 @@ admin.site.register(Position)
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(Contact)
 admin.site.register(Project)
+admin.site.register(Service)
 admin.site.register(GalleryCategory)
 admin.site.register(Gallery)
 admin.site.register(Social)

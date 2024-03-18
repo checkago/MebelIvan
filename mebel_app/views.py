@@ -2,14 +2,25 @@ from django import views
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 
-from mebel_app.models import Contact, About, Project, Employee
+from mebel_app.models import Contact, About, Project, Employee, Service, Banner
 
 
 # Create your views here.
 class IndexView(views.View):
+    title = 'Mebel App'
+    banners = Banner.objects.all()
+    abouts = About.objects.all()
+    projects = Project.objects.all()
+    services = Service.objects.all()
 
     def get(self, request, *args, **kwargs):
-        context = None
+        context = {
+            'title': self.title,
+            'abouts': self.abouts,
+            'projects': self.projects,
+            'services': self.services,
+            'banners': self.banners
+        }
         return render(request, 'index.html', context)
 
 

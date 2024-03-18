@@ -118,6 +118,19 @@ class Contact(models.Model):
         return self.name
 
 
+class Service(models.Model):
+    name = models.CharField(max_length=150, verbose_name='Наименование')
+    icon = models.CharField(max_length=150, verbose_name='Иконка')
+    description = models.TextField(verbose_name='Описание')
+
+    class Meta:
+        verbose_name = 'Услуга на главной'
+        verbose_name_plural = 'Услуги на главной'
+
+    def __str__(self):
+        return self.name
+
+
 class Project(models.Model):
     name = models.CharField(max_length=100, verbose_name='Наименование')
     image = models.ImageField(upload_to='media/projects', verbose_name='Изображение')
