@@ -32,7 +32,7 @@
             <!-- bannerBlockSlideBg -->
             {% if Banner.image %}
             <span class="bgCover bannerBlockSlideBg d-block position-absolute">
-                <img class="sr-only" src="{{ Banner.image.url }}" alt="image description">
+                <img src="{{ Banner.image.url }}" alt="image description">
             </span>
             {% else %}
             <span class="bgCover bannerBlockSlideBg d-block position-absolute" style="background-image: url(http://placehold.it/1920x870);">
